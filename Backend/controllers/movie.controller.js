@@ -1,4 +1,4 @@
-import { json } from "express";
+
 import { fetchFromTMDB } from "../services/tmdb.services.js"
 
 export async function getTrendingMovie(req, res) {
@@ -29,7 +29,7 @@ export async function getMovieTrailers(req, res) {
 	}
 }
 
-export async function getMovieDetiles(req, res) {
+export async function getMovieDetailes(req, res) {
 	const { id } = req.params;
 	try {
 		const data = await fetchFromTMDB(`https://api.themoviedb.org/3/movie/${id}?language=en-US`) 
