@@ -5,7 +5,7 @@ import {create} from 'zustand';
 export const useAuthStore = create((set) => ({
     user:null,
     isSigningUp: false,
-    isCheckinAuth: true,
+    isCheckingAuth: true,
     isLoggingOut: false,
     isLoggingIn: false,
     signup: async (credentials) => {
@@ -41,13 +41,14 @@ export const useAuthStore = create((set) => ({
         }
     },
     authCheck: async () => {
-        set({ isCheckinAuth: true })
+        set({ isCheckingAuth: true })
         try {
             const response = await axios.get("/api/v1/auth/authCheck");
-            set({ user: response.data.user, isCheckinAuth: false })
+            set({ user: response.data.user, isCheckingAuth: false })
+        // eslint-disable-next-line no-unused-vars
         } catch (error) {
-            set({ isCheckinAuth: false, user: null});
-            toast.error(error.response.data.message || "An error occurred");
+            set({ isCheckingAuth: false, user: null});
+            // toast.error(error.response.data.message || "An error occurred");
         }
     },
-}))
+}));
