@@ -3,7 +3,7 @@ import { useContentStore } from "../store/content";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { SMALL_IMG_BASE_URL } from "../utils/constants";
-import { Check, ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const MovieSlider = ({ category }) => {
   const { contentType } = useContentStore();
@@ -33,7 +33,7 @@ const MovieSlider = ({ category }) => {
     }
   };
   const scrollRight = () => {
-    sliderRef.current.scrollBy({left:-sliderRef.current.offsetWidth, behavior: 'smooth'})
+    sliderRef.current.scrollBy({left: sliderRef.current.offsetWidth, behavior: 'smooth'})
   };
 
   return (
