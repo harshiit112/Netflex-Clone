@@ -3,6 +3,9 @@ MERN Netflix Clone 🎬
 
 About This Project:
 
+npm install : axios bcryptjs cookie-parser dotenv express jsonwebtoken 
+              mongooose nodemon
+
 ⚛️ Tech Stack: React.js, Node.js, Express.js, MongoDB, Tailwind
 
 🔐 Authentication with JWT
